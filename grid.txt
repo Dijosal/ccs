@@ -1,0 +1,183 @@
+---------------------- CONCEPTOS BASICOS DE GRID ---------------------
+
+_Grid: Es un estilo de layout y es un valor de la propiedad display,
+       se trabaja en el layout a traves de grillas
+
+la estructura de grid o grillas esta en la imagen grid.png
+
+_Grid Container: Es igual que el flex-container
+
+_Grid Item: Cada uno de los elementos que forme parte del container
+es un grid-item. Y solo son los hijos directos
+
+_Grid Cell: Es cada cuadrito del grid o malla, pueden ser cuadrados, rectangulos,
+no importa su tamaño siempre tienen que ser cuadrilateros.
+
+_Grid Tracks (Column y Row): Son las filas y columnas del grid o malla y su valor
+es el numero de columnas mas el numero de filas.
+
+_Grid Area: Las areas no estan definidas por defecto, las tenemos que definir
+nosotros y es la celda o conjunto de celdas consecutivas (tanto vertical como
+horizontalmente) que conforman un area, y prefiriblemente deben ocupar mas de
+una celda.
+
+_Grid Line (Colum Line y Row Line): Es la suma de las lineas que empiezan
+desde la primera hasta la ultima tanto en las colums como en los rows.
+
+en la imagen Grid_lines.png se aprecia mejor esto
+
+
+----------------------------- PROPIEDADES ----------------------------
+
+Grid-template-rows (Grid-container): Es el numero de filas que va a 
+tener el grid y se las damos por medidas. Ejemplo: 3 filas de 150px
+--------------grid-template-rows: 150px 150x 150px-------------------
+
+Grid-template-columns (Grid-container): Es igual que el rows pero
+es para las columnas
+
+unidades "auto" y fr (el tamaño que sobre se lo dan a esa fila, es como
+                      flex-box)
+
+
+
+Grid-row-gap (Grid-container): Es como margin pero entre celdas y no
+aplica para espacios entre celda y el borde de la malla, solo entre
+celda y celda, y este es para las filas
+
+Grid-column-gap (Grid-container): Es igual al row pero este es para las
+columnas
+
+Grid-gap (Grid-container): Es el shorthand de row-gap y column-gap
+
+
+
+Grid-row-start (Grid-item): Se aplica al item he indica en que linea
+va a comenzar la celda en la fila
+
+Grid-row-end (Grid-item): Se aplica al item he indica en que linea
+va a terminar la celda en la fila
+
+Grid-column-start (Grid-item): Se aplica al item he indica en que linea
+va a comenzar la celda en la columna
+
+Grid-column-end (Grid-item): Se aplica al item he indica en que linea
+va a terminar la celda en la columna
+
+Grid-row (Grid-item): Es el shorthand de row-start y row-end
+
+Grid-column (Grid-item): Es el shorthand de column-start y column-end
+
+
+repeat(cantidad, tamaño): valor que permite acorta el codigo cuando
+se quiere poner filas o conjuntos de filas
+
+
+
+--------------------- GRID IMPLÍCITO Y EXPLÍCITO ---------------------
+
+grid-auto-rows (igual que el template): No se puede usar repeat porque
+se aplica a la fila que sobra, a esa es a la cual se le da el tamaño
+
+grid-auto-columns (igual que el template): Igual que el auto-rows pero
+para la columna
+
+grid-auto-flow: 
+                Row(default, los items sobrantes o que no llegan a
+completar los espacio, se colocan en una nueva fila en la parte de
+abajo adentro de la malla)
+                
+                Column(igual que el row pero se aplica a la columna)
+                
+                Dense(rellena los espacios sobrantes)
+
+
+
+--------------------------- GRID DINÁMICO ----------------------------
+
+Es el que tiene columnas, estructuras auto-ajustables y muchas otras
+propiedades que son la cantidad de columnas o filas; o el tamaño de
+estas que cambien mutuamente.
+
+minmax(valor_min, valor_max): se aplica generalmente en el repeat()
+y permite decirle el min y el max del tamaño del grid-item.
+
+min-content: Hace que el grid-item abarque el mismo tamaño de la pala
+bra mas larga del texto que contenga
+
+max-content: Igual que el min-content pero hace que el todo el texto
+este en una sola linea y ese va a ser el tamaño del grid-item
+
+auto-fill: Genera la cantidad de columnas que pueda mientras cumpla
+con las propiedades existentes
+
+auto-fit: Igual que el auto-fill, pero en vez de hacer nuevas columnas
+este las escala
+
+-------------------- ALINEACION Y CONTROL DE FLUJO --------------------
+
+justify-content (horizontalmente): se aplica al contenedor y alinea 
+las cajas dentro de él horizontalmente
+
+align-content (verticalmente): se aplica al contenedor y alinea las 
+cajas dentro de él verticalmente
+
+justify-items (horizontalmente): se aplica a los items y se alinean 
+dentro del conjunto de caja o individualmente de forma horizontal
+
+align-items (verticalmente): se aplica a los items y se alinean 
+dentro del conjunto de caja o individualmente de forma vertial
+
+los valores de estos son: start, center y end
+
+los valores que solo se le pueden dar a justify-content y a
+align-content son:
+    space-arround: Igual que el margin: auto; pero es mejor porque
+    le estamos dando esta propiedad al contenedor y no al contenido
+    lo que nos permite modificar item por item las propiedades
+
+    space-between: Le da un margin automatico, haciendo que los 
+    grid-items esten seperados lo maximo posible a la misma distancia.
+
+    space-evenly: Es como el margin: auto; pero procura que todos
+    los grid-items tengan la misma distancia una de otras
+
+Son los mismo valores que se les dan a los flex-containers
+
+------------------------- APLICADO AL GRID ITEM -------------------------
+
+Se aplica directo al grid-item individualmente
+
+align-self (vertical): se alinea en el espacio dado de manera vertical
+justify-self (horizontal): se alinea en el espacio dado de manera horizontal
+
+place-self: Es el short-hand y se aplica como align-self justify-self
+
+
+Stretch(default) - start - center - end
+
+Order (igual que en flex): a mayor valor de order se le este aplicando
+al item, este estara de ultimo en el order.
+
+----------------------------AREAS EN GRID----------------------------
+
+AL GRID CONTAINER
+grid-template-areas: "nombre/s de area/s";
+
+AL GRID ITEM
+grid-area: "nombre del area";
+
+-------------------------NOMBRES A LAS LINEAS-------------------------
+
+[line-name]
+
+se puede reemplazar en: GRID-ROW | GRID-COLUMN
+
+ejemplo:
+
+grid-template:
+    [f-line]
+    150px
+    [s-line]
+    200px
+    [t-line];

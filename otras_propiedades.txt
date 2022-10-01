@@ -1,0 +1,114 @@
+------------------------------TRANSITION------------------------------
+
+Propiedad que nos permite realizar transiciones dentro de los elementos
+es decir, el proceso de un cambio
+
+transition-property: property/ies - all - none
+
+transition-duration: duration/s
+
+transition-delay: delay/s Se encarga de indicar el tiempo en el que se 
+muestran los cambios despues de la accion.
+
+transition-timing-function: liner | ease | ease-in | ease-out |
+                            esase-in-out | step-start | step-end |
+                            steps(int, start|end) | initial | inherit;
+
+transition: shorthand
+
+------------------------------ANIMACIONES------------------------------
+
+@keyframes
+
+animation-name: name
+
+animation-duration : duration
+
+animation-delay : delay
+
+animation-timing-function : (Transition values)
+
+animation-iteration-count : number cuantas veces se repite la animacion
+
+animation-direction: normal (0%-100%), reverse(100%-0%),
+                     alternate (0%-100% y 100%-0%),
+                     alternate-reverse (100%-0% y 0%-100%)
+
+animation-fill-mode : none | forwards(queda con los valores del 100%) 
+                    | backwards | both (empieza con loas valores del 0%)
+                    | initial
+                    | inherit;
+
+-------------------------------TRANSFORM------------------------------
+
+transform: translate(x) - translateY(y) translate(x - x,y) (Si usamos
+           porcentajes, son porcentajes relativos al elemento)
+           recomendado para animaciones. Desplaza el elemento a traves
+           de los ejes X y Y
+
+transform: scale(xy - x,y) - scaleX(x) - scaleY(y)
+           (Determina la escala del tamaño en conjunto o por separado
+           de los ejes X y Y del elemento, si le damos scale(2) sera
+           2 veces el tamaño del elemento; si le damos scale(2, 1) sera
+           2 veces el tamaño del elemento en el eje X y el tamaño normal
+           en el eje Y.)
+
+transform: rotate(angleUnit) - rotateX(angleUnit) - rotateZ(angleUnit)
+         - rotate3D(angleUnit) || angleUnit - deg - grad - rad - turn
+
+transform: skew(angleUnit) Inclina las linea paralelas del elemento
+           incluyendo el contenido, segun los angleUnit
+
+https://www,w3scholl.s.com/cssref/css3_pr_transform.asp
+
+clip-path generator, se usa para generar figuras
+
+------------------------------BACKGROUND------------------------------
+
+background-color: color
+
+background-image: url(direccion url)
+
+background-size: x, y, auto, cover, contain
+
+background-clip: border-box | padding-box | content-box (muestra la 
+                 imagen desde donde nosotros le digamos y la recorta)
+
+background-origin - origen de la foto (valores de arriba)(igual que
+                 clip pero la crea desde donde nosotros le digamos)
+
+background-position: left - top - bottom -  ++ left - top - bottom -
+                        right - center            right - center
+
+background-attachment: scroll | fixed | inherit
+
+-------------------------------VARIABLES------------------------------
+Para declararla se usa --varName y para usarla var(varName)
+
+
+--------------------------------FILTER--------------------------------
+
+none
+blur(px) indica lo pixeleada o borroso de la imagen
+brightness(0-1)
+contrast(number or %)
+drop-shadow(medidas) sombra a imagenes con fondo transparente
+hue-rotate(deg)invierte la gama de colores
+invert(%)invierte los colores
+opacity(%)
+saturate(%)
+sepia(%)
+url("filters-svg#filer-id"):
+
+---------------------------OTRAS PROPIEDADES--------------------------
+
+letter-spacing: indica la separacion entre las letras
+
+scroll-behavior: smooth; (controla la velocidad con la que baja o sube el scroll
+cuando una referencia es clickeada)
+
+user-selected: none; no permite que el usuario selecciones el texto o
+               contenido del elemento
+
+SELECTORES: https://www.w3schools.com/cssref/css_selectors.asp
+

@@ -1,0 +1,15 @@
+CSS Selectores
+
+Universal - *
+de tipo - h1, h2, button, etc. Selecciona el elemento por su tipo
+clases - .nombre_de_la_clase. Selecciona los elemento por su clase
+          sin importar su tipo de elemento
+ID - #nombre_del_ID. El ID es la identificacion unica de cada elemento
+por atributo - [nombre=valor]. Selecciona el elemento por el atributo
+descendiente - contenedor elemento. Selecciona solo los elementos
+               que esten dentro del contenedor especificado, este
+               contenedor puede ser de clase, id o por atributo
+pseudo-clases - Son como interacciones con el usuario, ejemplo:
+                si queremos que un elemento cambie de color cuando
+                le pasamos el puntero por encima colocamos lo siguiente
+                nombre-del-elemnto:hover.

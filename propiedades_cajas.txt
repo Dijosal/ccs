@@ -1,0 +1,136 @@
+Padding: Distancia entre el texto y la caja
+
+outline: algo que no ocupa espacio, solo esta superpuesto
+
+POSITION
+    Static: Cuando se usa static como valor de la propiedad position
+    basicamente se considera que no esta jposicionado
+
+    Relative: si reserva el elemento que ocupa en el flujo o su
+    espacio predefinido
+
+    Absolute: no reserva el elemento que ocupa en el flujo o su
+    espacio predefinido
+
+    Fixed: Es exactamente igual que el absolute pero queda fijado,
+    se aplica principalmente en menus y publicidad ads
+
+    Sticky: Es una mezcla entre Relative-Fixed, porque al igual
+    que el position Relative, el espacio que se reserva en la pagina
+    dentro del DOM lo conserva y se comporta como un position Fixed
+    cuando llegamos al punto en el que nosotros le decimos con el top
+
+DISPLAY
+Modifica el comportamientos de las cajas
+
+    Block: Son los elementos que completan todo, sin importar el
+    contenido
+
+    Inline: Son los elementos que ocupan los que el contenido les da
+    y se usa generalmente para texto
+
+    Inline-Block: Es una mezcla entre Inline y Block porque permite 
+    decirle a la caja o elemento que se comporte como block pero que 
+    el tamaño se adecue al contenido y le damos width y height.
+
+OVERFLOW
+Esto lo que hace es modificar el contenido de la caja que queda afuera
+
+    Auto: Si detecta que el contenido no entra en la caja, permite
+    scrollear todo el contenido dentro de la caja sin que se salga
+    de la misma
+
+    Scroll: No importa si el contenido o elemento de la caja queda
+    afuera o no, siempre va a poner la barra de scroll
+
+    Hidden: no lo muestra y ajusta el contenido a la caja
+
+FLOAT
+No se usa tanto como antes, pero sirve para maquetar una imagen o 
+algun o otro elemento dentro de un texto
+
+PSEUDO-ELEMENTOS
+Son elementos que no son elementos, es decir, no forman parte del
+DOM (Document Object Model), pero si podemos ver un cambio visual
+
+    ::first-line: No funciona en elementos IN-LINE, este pseudo-elemento
+    permite modificar la primera linea del elemento dandole cualquier
+    otro formato que queramos. Si forma parte del DOM
+
+    ::first-letter: Parecido al first-line pero en vez de la primera
+    linea, sera la primera letra del elemento. Si forma parte del DOM
+
+    ::place-holder: Modifica el texto del placeholder del input, para
+    que se muestre visualmente como queramos
+
+    ::selection: Modifica lo que se muestra cuando seleccionamos algo
+    del elemento del contenedor y se comporta como un elemento en linea
+    por lo cual no podemos darle width, height ni padding
+
+    ::before: Son hijos del elemento al que le aplicando el pseudo-elemento,
+    necesitan la propiedad content y son elementos in-line. La funcion
+    de este pseudo-elemento es mostrar un content antes del padre o
+    elemento al que le estamos aplicando este seudo elemento. Y no
+    forma parte del DOM. Con los pseudo-elementos podemos hacer muchas
+    cosas como: Iconos básicos, figuras, dibujitos, animaciones, etc.
+
+    ::after: Es igual que el ::before pero en vez de ir antes del elemento,
+    va despues del elemento. Al igual que el ::before, funcionan en
+    elementos Inline y en Block
+
+PSEUDO-CLASES
+
+    :hover: Da un estilo diferente cuando el mouse se posiciona en el
+    elemento especificado. Funciona en todo los elementos, pero no en
+    los pseudo-elementos. Esta pseudo-clase se aplica generalmente para
+    los navs
+
+    :link: Da un estilo diferente al link o elemento <a></a>, pero
+    cuando este ya se visitó, vuelve a su estilo original.
+
+    :visited: Permite darle estilo al link que ya se ha visitado
+
+    :active: Permite darle estilo diferente al elemento cuando este
+    es clickeado por el mouse
+
+    :focus: Se aplica generalmente a los inputs, permite darle un
+    estilo diferente al elemento cuando es clickeado y seleccionado
+    por el mouse, y este estilo desaparece cuando le damos click en
+    otro elemento o parte de la pagina que no sea este.
+
+    :lang(): Es una funcion que se aplica al elemento con el lenguaje
+    que le pasamos com parametro, y tambien se tiene que especificar
+    en el elemento que esta en el DOM con el atributo lang="".
+    Casi ni se usa
+
+OBJECT-FIT: Fil
+Generalmente se aplica a imagenes.
+
+    Contain: Es un valor que permite que la resolucion de la imagen se
+    ajusten al contenido o contenedor, es decir, la imagen no pierde
+    resolucion y queda centrada en caso de no abarcar todo el espacio
+    del contenedor o contenido. (No Rellena los espacios)
+
+    Cover: Igual que el Contain, pero en cambio, este valor completa
+    todo el espacio del contenedor, preserva la resolucion, recorta
+    los espacios de la imagen que quedaron afuera del contenedor y
+    centra la imagen. (Rellena los espacios)
+
+    None: Le da igual todo y pone la imagen con la resolucion original,
+    con el mismo tamaño y la centra
+
+    Scale-Down: Agarra Contain y None, comprueba cual de las dos tiene
+    la resolucion mas pequeña y la toma.
+
+OBJECT-POSITION:
+Permite mostrar cuales lados o posiciones de la imagen se quieran mostrar
+
+TOP - LEFT - RIGHT - BOTTOM
+PX - EM - % - ETC
+
+CURSOR
+Permite modificar el aspecto del curso, la lista de todos los cursores
+se encuentra en esta pagina:
+
+https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor
+

@@ -1,0 +1,138 @@
+FLEX BOX
+
+Es una nueva forma de maquetar con cajas flexibles. En flex-box el
+el nombre para el Eje 'X' es 'Main axis' y el 'Y' es 'Cross axis',
+mas que ejes son direcciones a donde se le apunta, son vectores.
+Y son elementos en bloque o block
+
+En el Main axis('X') se empieza de izquierda (main-start) 
+a derecha (main-end), es decir, al conjunto de main-start y main-end,
+es el main axis.
+
+En el Main axis('Y') se empieza de izquierda (cross-start) 
+a derecha (cross-end), es decir, al conjunto de cross-start y cross-end,
+es el cross axis.
+
+El cuadro esta en cuadro_main-cross-axis.png
+
+Cuando un contenedor x tiene un display: flex; y los elementos
+dentro de este son flex-items o flex-box, pero solo aquellos
+elementos hijos directos, es decir, que los nietos por asi decirlo
+no van a ser flex-items, ejemplo:
+
+<div class="style_con_display: flex;">
+	<h2></h2> <!--Este es flex-item -->
+	<p></p> <!--Este es flex-item -->
+	<div>  <!--Este es flex-item -->
+		<h3></h3> <!--Este no es flex-item -->
+		<p></p> <!--Este no es flex-item -->
+	</div>
+	<b></b> <!--Este es flex-item -->
+</div>
+
+PROPIEDADES QUE SE LE APLICAN AL CONTENEDOR
+
+Estas propiedades se le aplican al flex-container pero se reflejan
+en los flex-items. Estas propiedades son:
+
+	Flex-Direction: Cambia el orden o la direccion en la cual se muestran los
+	flex-items. Sus propiedades son:
+		- row: Es la propiedad por defecto y hace que los items se
+		muestren en fila de izquierda a derecha.
+
+		- row-reverse: Igual que el row pero en vez de izquierda a 
+		derecha, es de derecha a izquierda.
+
+		- column: Propiedad que muestra los items de arriba a abajo,
+		en forma de columna.
+
+		- column-reverse: Igual que el column pero en vez de arriba a
+		abajo, es de abajo a arriba
+
+	Flex-Wrap: Propiedad que apila las cajas dependiendo de los parametros
+	sus propiedades son:
+		No-wrap: No apila las cajas y es el valor por defecto
+
+		Wrap: Apila las cajas hacia abajo cuando superan el min-width
+		o cuando el contenido de la caja llega al minimo antes de ajustase
+		hacia abajo.
+
+		Wrap-reverse: Igual que el Wrap, pero apila las cajas hacia
+		arriba
+
+	Flex-Flow: Es un shorthand, que acorta el codigo poniendo los 
+	valores de las propiedades flex-direction y flex-wrap en la misma
+	linea de codigo.
+	Ejemplo: flex-flow: column wrap;
+
+	Justify-Content: Modifica el comportamiento del contenido del 
+	flex-item, en el main axis. Sus valores son:
+
+		center: Se centran los flex-items en el flex-container
+
+		space-arround: Igual que el margin: auto; pero es mejor porque
+		le estamos dando esta propiedad al contenedor y no al contenido
+		lo que nos permite modificar item por item las propiedades
+
+		space-between: Le da un margin automatico, haciendo que los 
+		flex-items esten seperados lo maximo posible a la misma distancia.
+
+		space-evenly: Es como el margin: auto; pero procura que todos
+		los flex-items tengan la misma distancia una de otras
+
+	Align-items: Se usa cuando hay solo una linea de items que son
+	flex-items
+
+	Align-content: Igual que el align-items pero en vez de una sola
+	linea, funciana para varias lineas de flex-items.
+	
+	Los valores de align-items y align-content son los mismo:
+		flex-strart: acomoda las cajas en el principio del contenedor,
+		y la caja se ajusta al contenido en caso de no tener height.
+
+		center: alinea las cajas en el centro.
+
+		flex-end: acomoda las cajas en el final del contenedor
+
+		stretch: Propiedad por defecto, que en caso de no tener height,
+		su largo va a ser a lo largo del cross-axis.
+
+		baseline: posiciona las cajas en el final del contenedor, se
+		usa principalmente con un wrap-reverse para que funcione correc-
+		tamente.
+
+PROPIEDADES DE LOS ITEMS
+
+Con estas propiedades vamos a poder modificar cada item en particular
+y darle otras propiedades y cosas, como, darle ancho, largo, hacer que
+se posicionen, crear un menu, un aside, una seccion principal, un footer, etc
+
+Estas propiedades se le dan directamente al item
+
+	Align-self: funciona de la misma forma que en los aligns items y
+	content, pero es propia de un item en especifico
+
+	Margin: Se comporta de una manera distinta de como lo hace normal-
+	mente, si le damos margin-top: auto; este se posiciona en el final
+	de la pagina, si le damos margin-left: auto; este se posiciona en
+	la parte derecha de la pagina, y si le damos a todos los lados un
+	valor de auto, esta se posiciona en el centro, pero podemos abreviar
+	esto con margin: auto; y funcionaria igual.
+
+	Flex-grow: Lo que hace esta propiedad es agarrar el espacio que sobra
+	en el contenedor, dividir y sumarselo al width de las cajas que
+	tengan esta propiedad o si es una caja, se lo suma a este y deja
+	las otras como estaban.
+
+	Flex-basis: Igual que el width pero con mas importancia en el ambito
+	de flex-box para los flex-items
+
+	Flex-shrink: Elige cual caja va a ceder mas espacio cuando el espacio
+	no de para todas
+
+	Flex: Es un shorthand que abrevia los valores de flex-grow,
+	flex-shrink, flex-basis. (El primer elemento es obligatorio)
+
+	Order: Propiedad que permite acomodar los flex-items mediante un valor
+	numerico que entre mas alto sea este, se posicionara al final del
+	sentido del main-axis, es como un z-index pero en el main-axis.
